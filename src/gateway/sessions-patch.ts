@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 import { resolveDefaultAgentId } from "../agents/agent-scope.js";
 import type { ModelCatalogEntry } from "../agents/model-catalog.js";
 import {
+  inferUniqueProviderFromConfiguredModels,
   resolveAllowedModelRef,
   resolveDefaultModelForAgent,
   resolveSubagentConfiguredModelSelection,
@@ -395,12 +396,27 @@ export async function applySessionsPatchToStore(params: {
           error: errorShape(ErrorCodes.UNAVAILABLE, "model catalog unavailable"),
         };
       }
+
+      // Determine the best default provider for model resolution.
+      // If the model string already includes a provider (contains "/"),
+      // use that. Otherwise, try to infer from configured models.
+      let effectiveDefaultProvider = resolvedDefault.provider;
+      if (!trimmed.includes("/")) {
+        const inferredProvider = inferUniqueProviderFromConfiguredModels({
+          cfg,
+          model: trimmed,
+        });
+        if (inferredProvider) {
+          effectiveDefaultProvider = inferredProvider;
+        }
+      }
+
       const catalog = await params.loadGatewayModelCatalog();
       const resolved = resolveAllowedModelRef({
         cfg,
         catalog,
         raw: trimmed,
-        defaultProvider: resolvedDefault.provider,
+        defaultProvider: effectiveDefaultProvider,
         defaultModel: subagentModelHint ?? resolvedDefault.model,
       });
       if ("error" in resolved) {
