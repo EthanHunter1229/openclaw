@@ -182,6 +182,15 @@ export async function getMessageFeishu(params: {
             sender_type?: string;
           };
           create_time?: string;
+          mentions?: Array<{
+            key: string;
+            id: {
+              open_id?: string;
+              user_id?: string;
+              union_id?: string;
+            };
+            name: string;
+          }>;
         }>;
         message_id?: string;
         chat_id?: string;
@@ -194,6 +203,15 @@ export async function getMessageFeishu(params: {
           sender_type?: string;
         };
         create_time?: string;
+        mentions?: Array<{
+          key: string;
+          id: {
+            open_id?: string;
+            user_id?: string;
+            union_id?: string;
+          };
+          name: string;
+        }>;
       };
     };
 
@@ -214,7 +232,23 @@ export async function getMessageFeishu(params: {
 
     const msgType = item.msg_type ?? "text";
     const rawContent = item.body?.content ?? "";
-    const content = parseQuotedMessageContent(rawContent, msgType);
+    const mentions = item.mentions ?? [];
+
+    // Normalize @mentions in quoted content (resolve @_user_N placeholders to <at> tags)
+    let content = parseQuotedMessageContent(rawContent, msgType);
+    if (mentions.length > 0) {
+      const escapeRegExp = (input: string) => input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const escapeName = (value: string) => value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+      for (const mention of mentions) {
+        const mentionId = mention.id.open_id;
+        const replacement = mentionId
+          ? `<at user_id="${mentionId}">${escapeName(mention.name)}</at>`
+          : `@${mention.name}`;
+
+        content = content.replace(new RegExp(escapeRegExp(mention.key), "g"), () => replacement).trim();
+      }
+    }
 
     return {
       messageId: item.message_id ?? messageId,
