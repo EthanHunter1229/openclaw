@@ -5,13 +5,14 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
+  brace-expansion: 5.0.5
   undici: 7.24.0
   hono: 4.12.7
   '@hono/node-server': 1.19.10
   fast-xml-parser: 5.5.8
   request: npm:@cypress/request@3.0.10
   request-promise: npm:@cypress/request-promise@5.0.0
-  file-type: 21.3.1
+  file-type: 21.3.2
   form-data: 2.5.4
   minimatch: 10.2.4
   qs: 6.14.2
@@ -120,8 +121,8 @@ importers:
         specifier: ^5.2.1
         version: 5.2.1
       file-type:
-        specifier: 21.3.1
-        version: 21.3.1
+        specifier: 21.3.2
+        version: 21.3.2
       grammy:
         specifier: ^1.41.1
         version: 1.41.1
@@ -3557,8 +3558,8 @@ packages:
   bowser@2.14.1:
     resolution: {integrity: sha512-tzPjzCxygAKWFOJP011oxFHs57HzIhOEracIgAePE4pqB3LikALKnSzUyU4MGs9/iCEUuHlAJTjTc5M+u7YEGg==}
 
-  brace-expansion@5.0.4:
-    resolution: {integrity: sha512-h+DEnpVvxmfVefa4jFbCf5HdH5YMDXRsmKflpf1pILZWRFlTbJpxeU55nJl4Smt5HQaGzg1o6RHFPJaOqnmBDg==}
+  brace-expansion@5.0.5:
+    resolution: {integrity: sha512-VZznLgtwhn+Mact9tfiwx64fA9erHH/MCXEUfB/0bX/6Fz6ny5EGTXYltMocqg4xFAQZtnO3DHWWXi8RiuN7cQ==}
     engines: {node: 18 || 20 || >=22}
 
   braces@3.0.3:
@@ -4135,8 +4136,8 @@ packages:
     resolution: {integrity: sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==}
     engines: {node: ^12.20 || >= 14.13}
 
-  file-type@21.3.1:
-    resolution: {integrity: sha512-SrzXX46I/zsRDjTb82eucsGg0ODq2NpGDp4HcsFKApPy8P8vACjpJRDoGGMfEzhFC0ry61ajd7f72J3603anBA==}
+  file-type@21.3.2:
+    resolution: {integrity: sha512-DLkUvGwep3poOV2wpzbHCOnSKGk1LzyXTv+aHFgN2VFl96wnp8YA9YjO2qPzg5PuL8q/SW9Pdi6WTkYOIh995w==}
     engines: {node: '>=20'}
 
   filename-reserved-regex@3.0.0:
@@ -7934,7 +7935,7 @@ snapshots:
       cli-highlight: 2.1.11
       diff: 8.0.4
       extract-zip: 2.0.1
-      file-type: 21.3.1
+      file-type: 21.3.2
       glob: 13.0.6
       hosted-git-info: 9.0.2
       ignore: 7.0.5
@@ -7966,7 +7967,7 @@ snapshots:
       cli-highlight: 2.1.11
       diff: 8.0.4
       extract-zip: 2.0.1
-      file-type: 21.3.1
+      file-type: 21.3.2
       glob: 13.0.6
       hosted-git-info: 9.0.2
       ignore: 7.0.5
@@ -10076,7 +10077,7 @@ snapshots:
 
   bowser@2.14.1: {}
 
-  brace-expansion@5.0.4:
+  brace-expansion@5.0.5:
     dependencies:
       balanced-match: 4.0.4
 
@@ -10688,7 +10689,7 @@ snapshots:
       node-domexception: '@nolyfill/domexception@1.0.28'
       web-streams-polyfill: 3.3.3
 
-  file-type@21.3.1:
+  file-type@21.3.2:
     dependencies:
       '@tokenizer/inflate': 0.4.1
       strtok3: 10.3.5
@@ -11590,7 +11591,7 @@ snapshots:
 
   minimatch@10.2.4:
     dependencies:
-      brace-expansion: 5.0.4
+      brace-expansion: 5.0.5
 
   minimist@1.2.8: {}
 
@@ -11629,7 +11630,7 @@ snapshots:
       '@tokenizer/token': 0.3.0
       content-type: 1.0.5
       debug: 4.4.3
-      file-type: 21.3.1
+      file-type: 21.3.2
       media-typer: 1.1.0
       strtok3: 10.3.5
       token-types: 6.1.2
@@ -11848,7 +11849,7 @@ snapshots:
       croner: 10.0.1
       dotenv: 17.3.1
       express: 5.2.1
-      file-type: 21.3.1
+      file-type: 21.3.2
       gaxios: 7.1.4
       hono: 4.12.7
       ipaddr.js: 2.3.0
