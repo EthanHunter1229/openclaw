@@ -1,14 +1,28 @@
-import { describe, expect, it } from "vitest";
-import { buildDiscordComponentCustomId, buildDiscordModalCustomId } from "../components.js";
-import {
-  createDiscordComponentButton,
-  createDiscordComponentChannelSelect,
-  createDiscordComponentMentionableSelect,
-  createDiscordComponentModal,
-  createDiscordComponentRoleSelect,
-  createDiscordComponentStringSelect,
-  createDiscordComponentUserSelect,
-} from "./agent-components.js";
+import { beforeAll, describe, expect, it } from "vitest";
+
+let buildDiscordComponentCustomId: typeof import("../component-custom-id.js").buildDiscordComponentCustomId;
+let buildDiscordModalCustomId: typeof import("../component-custom-id.js").buildDiscordModalCustomId;
+let createDiscordComponentButton: typeof import("./agent-components.js").createDiscordComponentButton;
+let createDiscordComponentChannelSelect: typeof import("./agent-components.js").createDiscordComponentChannelSelect;
+let createDiscordComponentMentionableSelect: typeof import("./agent-components.js").createDiscordComponentMentionableSelect;
+let createDiscordComponentModal: typeof import("./agent-components.js").createDiscordComponentModal;
+let createDiscordComponentRoleSelect: typeof import("./agent-components.js").createDiscordComponentRoleSelect;
+let createDiscordComponentStringSelect: typeof import("./agent-components.js").createDiscordComponentStringSelect;
+let createDiscordComponentUserSelect: typeof import("./agent-components.js").createDiscordComponentUserSelect;
+
+beforeAll(async () => {
+  ({ buildDiscordComponentCustomId, buildDiscordModalCustomId } =
+    await import("../component-custom-id.js"));
+  ({
+    createDiscordComponentButton,
+    createDiscordComponentChannelSelect,
+    createDiscordComponentMentionableSelect,
+    createDiscordComponentModal,
+    createDiscordComponentRoleSelect,
+    createDiscordComponentStringSelect,
+    createDiscordComponentUserSelect,
+  } = await import("./agent-components.js"));
+});
 
 type WildcardComponent = {
   customId: string;
