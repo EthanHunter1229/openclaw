@@ -5309,7 +5309,7 @@ packages:
   lodash.pickby@4.6.0:
     resolution: {integrity: sha512-AZV+GsS/6ckvPOVQPXSiFFacKvKB4kOQu6ynt9wz0F3LO4R9Ij4K1ddYsIytDpSgLz88JHd9P+oaLeej5/Sl7Q==}
 
-  lodash@4.17.23:
+  lodash@4.18.0:
     resolution: {integrity: sha512-LgVTMpQtIopCi79SJeDiP0TfWi5CNEc/L/aRdTh3yIvmZXTnheWpKjSZhnvMl8iXbC1tFg9gdHHDMLoV7CnG+w==}
 
   log-symbols@7.0.1:
@@ -13097,7 +13097,7 @@ snapshots:
 
   lodash.pickby@4.6.0: {}
 
-  lodash@4.17.23: {}
+  lodash@4.18.0: {}
 
   log-symbols@7.0.1:
     dependencies:
