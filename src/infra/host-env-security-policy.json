@@ -17,7 +17,11 @@
     "PS4",
     "GCONV_PATH",
     "IFS",
-    "SSLKEYLOGFILE"
+    "SSLKEYLOGFILE",
+    "HGRCPATH",
+    "CARGO_BUILD_RUSTC_WRAPPER",
+    "RUSTC_WRAPPER",
+    "MAKEFLAGS"
   ],
   "blockedOverrideKeys": [
     "HOME",
@@ -44,7 +48,24 @@
     "OPENSSL_ENGINES",
     "PYTHONSTARTUP",
     "WGETRC",
-    "CURL_HOME"
+    "CURL_HOME",
+    "GIT_DIR",
+    "GIT_WORK_TREE",
+    "GIT_INDEX_FILE",
+    "GIT_CONFIG_GLOBAL",
+    "GIT_CONFIG_SYSTEM",
+    "GIT_CONFIG_NOSYSTEM",
+    "PIP_INDEX_URL",
+    "PIP_PYPI_URL",
+    "PIP_EXTRA_INDEX_URL",
+    "PIP_CONFIG_FILE",
+    "PIP_FIND_LINKS",
+    "PIP_TRUSTED_HOST",
+    "UV_INDEX",
+    "UV_INDEX_URL",
+    "UV_PYTHON",
+    "UV_EXTRA_INDEX_URL",
+    "UV_DEFAULT_INDEX"
   ],
   "blockedOverridePrefixes": ["GIT_CONFIG_", "NPM_CONFIG_"],
   "blockedPrefixes": ["DYLD_", "LD_", "BASH_FUNC_"]
